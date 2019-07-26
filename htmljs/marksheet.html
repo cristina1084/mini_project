@@ -10,13 +10,13 @@
 </head>
 <body>
     <div class="container">
-        <br>
+        <br><br>
         <div class="row">
             <div class="col col-12 col-sm-12 col-md-12">
-                <div class="card">
-                    <h5 class="card-header"> Student Marksheet </h5>
+                <div class="card border-dark ">
+                    <h5 class="card-header bg-dark text-white"> Student Marksheet </h5>
                     <div class="card-body">
-                        <form action="">
+                        <form action="" id="myForm">
                             <div class="form-group">
                                 <!-- <label for="fullName">Name</label> -->
                                 <input type="text" class="form-control" id="fullName" placeholder="Name" required>
@@ -48,7 +48,7 @@
                                 </div>
                                 <div class="form-group col-12 col-sm-3 col-md-3">
                                     <!-- <label for="subm1"> Mark </label> -->
-                                    <input type="number" class="form-control" id="subm1" placeholder="Mark Obtained" required>
+                                    <input type="number" class="form-control" id="subm1" placeholder="Mark Obtained"  required>
                                 </div>
                                 <div class="form-group col-12 col-sm-3 col-md-3"> 
                                     <!-- <label for="tm1">Total mark</label> -->
@@ -126,7 +126,8 @@
                                 </div>
                             </div>
                             <div class="col text-center">
-                                <button type="button" class="btn btn-primary">Generate Marklist</button>
+                                <button type="button" class="btn btn-success" onclick="generateMark()">Generate Marklist</button>
+                                <button type="button" class="btn btn-secondary" onclick="resetForm()">Reset</button>
                             </div>
                         </form>
                     </div>
