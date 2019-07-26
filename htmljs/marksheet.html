@@ -5,8 +5,134 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Student Marksheet</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="./js/marksheet.js"></script>
 </head>
 <body>
-    
+    <div class="container">
+        <br>
+        <div class="row">
+            <div class="col col-12 col-sm-12 col-md-12">
+                <div class="card">
+                    <h5 class="card-header"> Student Marksheet </h5>
+                    <div class="card-body">
+                        <form action="">
+                            <div class="form-group">
+                                <!-- <label for="fullName">Name</label> -->
+                                <input type="text" class="form-control" id="fullName" placeholder="Name" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-12 col-sm-6 col-md-6">
+                                    <!-- <label for="sem"> Semester </label> -->
+                                    <select name="" id="sem" class="form-control">
+                                        <option selected>Select Semester</option>
+                                        <option value="S1">S1</option>
+                                        <option value="S2">S2</option>
+                                        <option value="S3">S3</option>
+                                        <option value="S4">S4</option>
+                                        <option value="S5">S5</option>
+                                        <option value="S6">S6</option>
+                                        <option value="S7">S7</option>
+                                        <option value="S8">S8</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-12 col-sm-6 col-md-6">
+                                    <!-- <label for="ecode">Exam Code</label> -->
+                                    <input type="text" class="form-control" id="ecode" placeholder="Exam code" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-12 col-sm-6 col-md-6">
+                                    <!-- <label for="sub1">Subject 1 Name </label> -->
+                                    <input type="text" class="form-control" id="sub1" placeholder="Subject 1" required>
+                                </div>
+                                <div class="form-group col-12 col-sm-3 col-md-3">
+                                    <!-- <label for="subm1"> Mark </label> -->
+                                    <input type="number" class="form-control" id="subm1" placeholder="Mark Obtained" required>
+                                </div>
+                                <div class="form-group col-12 col-sm-3 col-md-3"> 
+                                    <!-- <label for="tm1">Total mark</label> -->
+                                    <input type="number" class="form-control" id="tm1" placeholder="Total Mark" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-12 col-sm-6 col-md-6">
+                                    <!-- <label for="sub2">Subject 2 Name </label> -->
+                                    <input type="text" class="form-control" id="sub2" placeholder="Subject 2" required>
+                                </div>
+                                <div class="form-group col-12 col-sm-3 col-md-3">
+                                    <!-- <label for="subm2"> Mark </label> -->
+                                    <input type="number" class="form-control" id="subm2" placeholder="Mark Obtained" required>
+                                </div>
+                                <div class="form-group col-12 col-sm-3 col-md-3"> 
+                                    <!-- <label for="tm2">Total mark</label> -->
+                                    <input type="number" class="form-control" id="tm2" placeholder="Total Mark" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-12 col-sm-6 col-md-6">
+                                    <!-- <label for="sub3">Subject 3 Name </label> -->
+                                    <input type="text" class="form-control" id="sub3" placeholder="Subject 3" required>
+                                </div>
+                                <div class="form-group col-12 col-sm-3 col-md-3">
+                                    <!-- <label for="subm3"> Mark </label> -->
+                                    <input type="number" class="form-control" id="subm3" placeholder="Mark Obtained" required>
+                                </div>
+                                <div class="form-group col-12 col-sm-3 col-md-3"> 
+                                    <!-- <label for="tm3">Total mark</label> -->
+                                    <input type="number" class="form-control" id="tm3" placeholder="Total Mark" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-12 col-sm-6 col-md-6">
+                                    <!-- <label for="sub4">Subject 4 Name </label> -->
+                                    <input type="text" class="form-control" id="sub4" placeholder="Subject 4" required>
+                                </div>
+                                <div class="form-group col-12 col-sm-3 col-md-3">
+                                    <!-- <label for="subm4"> Mark </label> -->
+                                    <input type="number" class="form-control" id="subm4" placeholder="Mark Obtained" required>
+                                </div>
+                                <div class="form-group col-12 col-sm-3 col-md-3"> 
+                                    <!-- <label for="tm4">Total mark</label> -->
+                                    <input type="number" class="form-control" id="tm4" placeholder="Total Mark" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-12 col-sm-6 col-md-6">
+                                    <!-- <label for="sub5">Subject 5 Name </label> -->
+                                    <input type="text" class="form-control" id="sub5" placeholder="Subject 5" required>
+                                </div>
+                                <div class="form-group col-12 col-sm-3 col-md-3">
+                                    <!-- <label for="subm5"> Mark </label> -->
+                                    <input type="number" class="form-control" id="subm5" placeholder="Mark Obtained" required>
+                                </div>
+                                <div class="form-group col-12 col-sm-3 col-md-3"> 
+                                    <!-- <label for="tm5">Total mark</label> -->
+                                    <input type="number" class="form-control" id="tm5" placeholder="Total Mark" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-12 col-sm-6 col-md-6">
+                                    <!-- <label for="sub6">Subject 6 Name </label> -->
+                                    <input type="text" class="form-control" id="sub6" placeholder="Subject 6" required>
+                                </div>
+                                <div class="form-group col-12 col-sm-3 col-md-3">
+                                    <!-- <label for="subm6"> Mark </label> -->
+                                    <input type="number" class="form-control" id="subm6" placeholder="Mark Obtained" required>
+                                </div>
+                                <div class="form-group col-12 col-sm-3 col-md-3"> 
+                                    <!-- <label for="tm6">Total mark</label> -->
+                                    <input type="number" class="form-control" id="tm6" placeholder="Total Mark" required>
+                                </div>
+                            </div>
+                            <div class="col text-center">
+                                <button type="button" class="btn btn-primary">Generate Marklist</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
