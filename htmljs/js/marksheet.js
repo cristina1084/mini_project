@@ -26,8 +26,8 @@ function grade(parray){
     }
     return grade;
 }
-function status(){
-
+function status(g){
+    return g == 'F';
 }
 
 function generateMark(){
@@ -36,7 +36,8 @@ function generateMark(){
     var totm = Array();
     var percentArray = Array();
     var gradeArray = Array();
-    var i;
+    var stat;
+    var i,s;
     
     var name = document.getElementById("fullName").value;
     var sem = document.getElementById("sem").value;
@@ -55,7 +56,11 @@ function generateMark(){
     gradeArray = grade(percentArray);
     console.log(gradeArray.toString());
     
-    //status();
+    stat = gradeArray.find(status);
+    if (stat == 'F') s = "Failed";
+    else s = "Passed";
+    
+    console.log(s);
 
     console.log(sub.toString());
     console.log(mark.toString());
