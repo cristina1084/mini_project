@@ -61,29 +61,31 @@ function generateMark(){  //Main function
     var percentArray = Array();
     var gradeArray = Array();
     var stat;
-    var i,s;
-
+    var a,b,c,s;
     var name = document.getElementById("fullName").value;
     var sem = document.getElementById("sem").value;
     var ecode = document.getElementById("ecode").value;
 
-    console.log(name,sem,ecode);
-
-    for(i=0;i<6;i++){
+    for(var i=0;i<6;i++){
         sub[i] = document.getElementById("sub" + (i+1)).value;
         mark[i] = parseFloat(document.getElementById("subm" + (i+1)).value);
         totm[i] = parseFloat(document.getElementById("tm" + (i+1)).value);
+        //if(mark[i] > totm[i]) document.getElementById("fb1").innerHTML = "Total mark is less than obtained mark";
     }
-
-    percentArray = percentMark(mark,totm);
-    gradeArray = grade(percentArray);
-    stat = gradeArray.find(status);
-
-    if (stat == 'F') s = "Failed";
-    else s = "Passed";
     
-    generateMarksheet(name, sem, ecode, sub, mark, totm, gradeArray, s);
+    if (name!="" && sem!="" && ecode!="") {
+        percentArray = percentMark(mark,totm);
+        gradeArray = grade(percentArray);
+        stat = gradeArray.find(status);
+
+        if (stat == 'F') s = "Failed";
+        else s = "Passed";
+
+        generateMarksheet(name, sem, ecode, sub, mark, totm, gradeArray, s);
+
+    }
     
+    console.log(name,sem,ecode);
     console.log(sub.toString());
     console.log(mark.toString());
     console.log(totm.toString());

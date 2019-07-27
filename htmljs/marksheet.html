@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Student Marksheet</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="./js/marksheet.js"></script>
 </head>
 <body>
     <div class="container">
@@ -24,8 +23,8 @@
                             <div class="form-row">
                                 <div class="form-group col-12 col-sm-6 col-md-6">
                                     <!-- <label for="sem"> Semester </label> -->
-                                    <select name="" id="sem" class="form-control">
-                                        <option selected>Select Semester</option>
+                                    <select name="" id="sem" class="form-control" required>
+                                        <option value="" selected>Select Semester</option>
                                         <option value="S1">S1</option>
                                         <option value="S2">S2</option>
                                         <option value="S3">S3</option>
@@ -53,6 +52,7 @@
                                 <div class="form-group col-12 col-sm-3 col-md-3"> 
                                     <!-- <label for="tm1">Total mark</label> -->
                                     <input type="number" class="form-control" id="tm1" placeholder="Total Mark" required>
+                                    <!-- <div class="invalid-feedback" id="fb1"> </div>  -->
                                 </div>
                             </div>
                             <div class="form-row">
@@ -126,7 +126,7 @@
                                 </div>
                             </div>
                             <div class="col text-center">
-                                <button type="button" class="btn btn-success" onclick="generateMark()">Generate Marklist</button>
+                                <button type="submit" class="btn btn-success" onclick="generateMark()">Generate Marklist</button>
                                 <button type="reset" class="btn btn-secondary" onclick="resetTable()">Reset</button>
                             </div>
                         </form>
@@ -141,5 +141,6 @@
             </div>
         </div>
     </div>
+    <script src="./js/marksheet.js"></script>
 </body>
 </html>
