@@ -29,6 +29,21 @@ function status(g){      //To check whether student has passed or failed
     return g == 'F';
 }
 
+function generateMarksheet(name1, sem1, ecode1, sub1, mark1, totm1, gradeArray1, stat1){    //Generates Table
+    var html; 
+    html = ' <div class="card"> <div class="card-body"> <table class="table table-borderless"> ';
+    html+= '<tr> <td> <label><h6> Name: </h6></label>'+ ' '+ name1 + ' </td> <td> <label> <h6> Sem: </h6></label> ' + ' ' + sem1;
+    html+= '</td> <td> <label> <h6> Exam Code: </h6></label> '+ ' '+ ecode1+ ' </td> </tr> </table> ';
+    html+= '<table class="table table-bordered"> <thead class="thead-dark"> <tr> <th> Subject </th> <th> Mark obtained </th> <th> Total Mark </th> <th> Grade </th> </tr></thead> <tbody>';
+
+    for (var z=0; z<6; z++){
+        html+='<tr>';
+        html+='<td>' + sub1[z] + '</td> <td>' + mark1[z] + '</td> <td>' + totm1[z] + '</td> <td>' + gradeArray1[z] + '</td> </tr>';
+    }
+    html+= '<tbody> </table> </div> </div>';
+    document.getElementById("table").innerHTML = html;
+}
+
 function generateMark(){  //Main function
     var sub = Array();
     var mark = Array();
@@ -37,7 +52,7 @@ function generateMark(){  //Main function
     var gradeArray = Array();
     var stat;
     var i,s;
-    
+
     var name = document.getElementById("fullName").value;
     var sem = document.getElementById("sem").value;
     var ecode = document.getElementById("ecode").value;
@@ -57,6 +72,7 @@ function generateMark(){  //Main function
     if (stat == 'F') s = "Failed";
     else s = "Passed";
     
+    generateMarksheet(name, sem, ecode, sub, mark, totm, gradeArray, stat);
     
     console.log(sub.toString());
     console.log(mark.toString());
