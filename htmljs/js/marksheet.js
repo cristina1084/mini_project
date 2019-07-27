@@ -1,5 +1,9 @@
 //Script to generate marksheet
 
+function resetTable(){
+    document.getElementById("table").innerHTML = ' ';
+
+}
 function percentMark(markarray,totalarray){   //Calculates the percentage of each subject
     var percent = Array();
     for(var j=0; j<6; j++){
@@ -40,12 +44,12 @@ function generateMarksheet(name1, sem1, ecode1, sub1, mark1, totm1, gradeArray1,
         html+='<tr>';
         html+='<td>' + sub1[z] + '</td> <td>' + mark1[z] + '</td> <td>' + totm1[z] + '</td> <td>' + gradeArray1[z] + '</td> </tr>';
     }
-    html+= '<tbody> </table> <label class="text-right"> <h6> STATUS: ';
+    html+= '<tbody> </table> <label class="float-right"> <h5> STATUS: ';
 
     if (s1 == 'Passed') html+= '<span class="text-success">';
     else html+= '<span class="text-danger">';
 
-    html+=' '+ s1 + ' </span> </h6> </label> </div> </div>';
+    html+=' '+ s1 + ' </span> </h5> </label> </div> </div>';
 
     document.getElementById("table").innerHTML = html;
 }
