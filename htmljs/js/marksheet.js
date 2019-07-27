@@ -1,8 +1,6 @@
-function resetForm(){
-    document.getElementById("myForm").reset();
-}
+//Script to generate marksheet
 
-function percentMark(markarray,totalarray){
+function percentMark(markarray,totalarray){   //Calculates the percentage of each subject
     var percent = Array();
     for(var j=0; j<6; j++){
         percent[j] = ( markarray[j] / totalarray[j] ) * 100;
@@ -10,7 +8,7 @@ function percentMark(markarray,totalarray){
     return percent;
 }
 
-function grade(parray){
+function grade(parray){                  //Assign grades to each subject based on percentage
     var grade = Array();
     for(var k=0; k<6; k++){
         if (parray[k] >= 95)      grade[k] = 'S';
@@ -26,11 +24,12 @@ function grade(parray){
     }
     return grade;
 }
-function status(g){
+
+function status(g){      //To check whether student has passed or failed
     return g == 'F';
 }
 
-function generateMark(){
+function generateMark(){  //Main function
     var sub = Array();
     var mark = Array();
     var totm = Array();
@@ -52,20 +51,18 @@ function generateMark(){
     }
 
     percentArray = percentMark(mark,totm);
-    console.log(percentArray.toString());
     gradeArray = grade(percentArray);
-    console.log(gradeArray.toString());
-    
     stat = gradeArray.find(status);
+
     if (stat == 'F') s = "Failed";
     else s = "Passed";
     
-    console.log(s);
-
+    
     console.log(sub.toString());
     console.log(mark.toString());
     console.log(totm.toString());
-    
-    
+    console.log(percentArray.toString());
+    console.log(gradeArray.toString());
+    console.log(s);
     
 }
