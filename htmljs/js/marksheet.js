@@ -29,7 +29,7 @@ function status(g){      //To check whether student has passed or failed
     return g == 'F';
 }
 
-function generateMarksheet(name1, sem1, ecode1, sub1, mark1, totm1, gradeArray1, stat1){    //Generates Table
+function generateMarksheet(name1, sem1, ecode1, sub1, mark1, totm1, gradeArray1, s1){    //Generates Table
     var html; 
     html = ' <div class="card"> <div class="card-body"> <table class="table table-borderless"> ';
     html+= '<tr> <td> <label><h6> Name: </h6></label>'+ ' '+ name1 + ' </td> <td> <label> <h6> Sem: </h6></label> ' + ' ' + sem1;
@@ -40,7 +40,13 @@ function generateMarksheet(name1, sem1, ecode1, sub1, mark1, totm1, gradeArray1,
         html+='<tr>';
         html+='<td>' + sub1[z] + '</td> <td>' + mark1[z] + '</td> <td>' + totm1[z] + '</td> <td>' + gradeArray1[z] + '</td> </tr>';
     }
-    html+= '<tbody> </table> </div> </div>';
+    html+= '<tbody> </table> <label> <h6> STATUS: ';
+
+    if (s1 == 'Passed') html+= '<span class="text-success">';
+    else html+= '<span class="text-danger">';
+
+    html+=' '+ s1 + ' </span> </h6> </label> </div> </div>';
+
     document.getElementById("table").innerHTML = html;
 }
 
@@ -72,7 +78,7 @@ function generateMark(){  //Main function
     if (stat == 'F') s = "Failed";
     else s = "Passed";
     
-    generateMarksheet(name, sem, ecode, sub, mark, totm, gradeArray, stat);
+    generateMarksheet(name, sem, ecode, sub, mark, totm, gradeArray, s);
     
     console.log(sub.toString());
     console.log(mark.toString());
