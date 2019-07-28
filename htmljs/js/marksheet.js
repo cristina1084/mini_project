@@ -7,6 +7,7 @@ function resetTable(){
 function percentMark(markarray,totalarray){   //Calculates the percentage of each subject
     var percent = Array();
     for(var j=0; j<6; j++){
+        //if(markarray[j]!=null && totalarray[j]!=null)  //!isNaN(markarray[j])&&!isNaN(totalarray[j])
         percent[j] = ( markarray[j] / totalarray[j] ) * 100;
     }
     return percent;
@@ -15,6 +16,7 @@ function percentMark(markarray,totalarray){   //Calculates the percentage of eac
 function grade(parray){                  //Assign grades to each subject based on percentage
     var grade = Array();
     for(var k=0; k<6; k++){
+        //if(parray[k]!=null) //!isNaN(parray[k])    
         if (parray[k] >= 95)      grade[k] = 'S';
         else if (parray[k] >= 90) grade[k] = 'A+';
         else if (parray[k] >= 85) grade[k] = 'A';
@@ -26,7 +28,7 @@ function grade(parray){                  //Assign grades to each subject based o
         else if (parray[k] >= 50) grade[k] = 'E';
         else if (parray[k] < 50)  grade[k] = 'F';
     }
-    return grade;
+    return grade.filter(function(e) {return e!=null;});       //filters empty value
 }
 
 function status(g){      //To check whether student has passed or failed
@@ -66,31 +68,39 @@ function generateMark(){  //Main function
     var sem = document.getElementById("sem").value;
     var ecode = document.getElementById("ecode").value;
 
-    for(var i=0;i<6;i++){
-        sub[i] = document.getElementById("sub" + (i+1)).value;
-        mark[i] = parseFloat(document.getElementById("subm" + (i+1)).value);
-        totm[i] = parseFloat(document.getElementById("tm" + (i+1)).value);
-        //if(mark[i] > totm[i]) document.getElementById("fb1").innerHTML = "Total mark is less than obtained mark";
-    }
-    
     if (name!="" && sem!="" && ecode!="") {
+        for(var i=0;i<6;i++){
+            //a = document.getElementById("sub" + (i+1)).value;
+            //b = parseFloat(document.getElementById("subm" + (i+1)).value);
+            //c = parseFloat(document.getElementById("tm" + (i+1)).value);
+            //if ((a != null && b != null && c != null) || (a != "" && (!isNaN(b)) && (!isNaN(c)))){
+            sub[i] = document.getElementById("sub" + (i+1)).value;//a;
+            mark[i] = parseFloat(document.getElementById("subm" + (i+1)).value);//b;
+            totm[i] = parseFloat(document.getElementById("tm" + (i+1)).value);//c;
+            //}
+            //if(mark[i] > totm[i]) document.getElementById("fb1").innerHTML = "Total mark is less than obtained mark";
+        }
+    
         percentArray = percentMark(mark,totm);
         gradeArray = grade(percentArray);
         stat = gradeArray.find(status);
 
         if (stat == 'F') s = "Failed";
         else s = "Passed";
+        
+        var sub2 = sub.filter(function(p) {return p!="";});   //filters empty string
 
-        generateMarksheet(name, sem, ecode, sub, mark, totm, gradeArray, s);
+        if(sub2.length==6 && gradeArray.length == 6)
+            generateMarksheet(name, sem, ecode, sub2, mark, totm, gradeArray, s);
 
-    }
+    } 
     
-    console.log(name,sem,ecode);
-    console.log(sub.toString());
-    console.log(mark.toString());
-    console.log(totm.toString());
-    console.log(percentArray.toString());
-    console.log(gradeArray.toString());
-    console.log(s);
+    /* console.log(name,sem,ecode);
+    console.log(sub);
+    console.log(mark);
+    console.log(totm);
+    console.log(percentArray);
+    console.log(gradeArray);
+    console.log(s); */
     
 }
