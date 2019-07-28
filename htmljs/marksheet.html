@@ -48,12 +48,13 @@
                                 </div>
                                 <div class="form-group col-12 col-sm-3 col-md-3">
                                     <!-- <label for="subm1"> Mark </label> -->
-                                    <input type="number" class="form-control" id="subm1" placeholder="Mark Obtained"  required>
+                                    <input type="number" class="form-control" id="subm1" placeholder="Mark Obtained" onkeyup="validateMark1('subm1','fbk11')" onclick="validateMark1('subm1','fbk11')" onchange="validateMark1('subm1','fbk11')" required>
+                                    <div class="text-danger" id="fbk11"> </div>                                 
                                 </div>
                                 <div class="form-group col-12 col-sm-3 col-md-3"> 
                                     <!-- <label for="tm1">Total mark</label> -->
-                                    <input type="number" class="form-control" id="tm1" placeholder="Total Mark" required>
-                                    <!-- <div class="invalid-feedback" id="fb1"> </div>  -->
+                                    <input type="number" class="form-control" id="tm1" placeholder="Total Mark" onkeyup="validateMark2('subm1','tm1','fbk21')" onclick="validateMark2('subm1','tm1','fbk21')" onchange="validateMark2('subm1','tm1','fbk21')" required>
+                                    <div class="text-danger" id="fbk21"> </div> 
                                 </div>
                             </div>
                             <div class="form-row">
@@ -63,11 +64,13 @@
                                 </div>
                                 <div class="form-group col-12 col-sm-3 col-md-3">
                                     <!-- <label for="subm2"> Mark </label> -->
-                                    <input type="number" class="form-control" id="subm2" placeholder="Mark Obtained" required>
+                                    <input type="number" class="form-control" id="subm2" placeholder="Mark Obtained" onkeyup="validateMark1('subm2','fbk12')" onclick="validateMark1('subm2','fbk12')" onchange="validateMark1('subm2','fbk12')" required>
+                                    <div class="text-danger" id="fbk12"> </div>                                 
                                 </div>
                                 <div class="form-group col-12 col-sm-3 col-md-3"> 
                                     <!-- <label for="tm2">Total mark</label> -->
-                                    <input type="number" class="form-control" id="tm2" placeholder="Total Mark" required>
+                                    <input type="number" class="form-control" id="tm2" placeholder="Total Mark" onkeyup="validateMark2('subm2','tm2','fbk22')" onclick="validateMark2('subm2','tm2','fbk22')" onchange="validateMark2('subm2','tm2','fbk22')" required>
+                                    <div class="text-danger" id="fbk22"> </div>                                 
                                 </div>
                             </div>
                             <div class="form-row">
@@ -77,11 +80,13 @@
                                 </div>
                                 <div class="form-group col-12 col-sm-3 col-md-3">
                                     <!-- <label for="subm3"> Mark </label> -->
-                                    <input type="number" class="form-control" id="subm3" placeholder="Mark Obtained" required>
+                                    <input type="number" class="form-control" id="subm3" placeholder="Mark Obtained" onkeyup="validateMark1('subm3','fbk13')" onclick="validateMark1('subm3','fbk13')" onchange="validateMark1('subm3','fbk13')" required>
+                                    <div class="text-danger" id="fbk13"> </div>                                 
                                 </div>
                                 <div class="form-group col-12 col-sm-3 col-md-3"> 
                                     <!-- <label for="tm3">Total mark</label> -->
-                                    <input type="number" class="form-control" id="tm3" placeholder="Total Mark" required>
+                                    <input type="number" class="form-control" id="tm3" placeholder="Total Mark" onkeyup="validateMark2('subm3','tm3','fbk23')" onclick="validateMark2('subm3','tm3','fbk23')" onchange="validateMark2('subm3','tm3','fbk23')" required>
+                                    <div class="text-danger" id="fbk23"> </div>                                 
                                 </div>
                             </div>
                             <div class="form-row">
@@ -91,11 +96,13 @@
                                 </div>
                                 <div class="form-group col-12 col-sm-3 col-md-3">
                                     <!-- <label for="subm4"> Mark </label> -->
-                                    <input type="number" class="form-control" id="subm4" placeholder="Mark Obtained" required>
+                                    <input type="number" class="form-control" id="subm4" placeholder="Mark Obtained" onkeyup="validateMark1('subm4','fbk14')" onclick="validateMark1('subm4','fbk14')" onchange="validateMark1('subm4','fbk14')" required>
+                                    <div class="text-danger" id="fbk14"> </div>                                 
                                 </div>
                                 <div class="form-group col-12 col-sm-3 col-md-3"> 
                                     <!-- <label for="tm4">Total mark</label> -->
-                                    <input type="number" class="form-control" id="tm4" placeholder="Total Mark" required>
+                                    <input type="number" class="form-control" id="tm4" placeholder="Total Mark" onkeyup="validateMark2('subm4','tm4','fbk24')" onclick="validateMark2('subm4','tm4','fbk24')" onchange="validateMark2('subm4','tm4','fbk24')" required>
+                                    <div class="text-danger" id="fbk24"> </div>                                 
                                 </div>
                             </div>
                             <div class="form-row">
@@ -105,11 +112,13 @@
                                 </div>
                                 <div class="form-group col-12 col-sm-3 col-md-3">
                                     <!-- <label for="subm5"> Mark </label> -->
-                                    <input type="number" class="form-control" id="subm5" placeholder="Mark Obtained" required>
+                                    <input type="number" class="form-control" id="subm5" placeholder="Mark Obtained" onkeyup="validateMark1('subm5','fbk15')" onclick="validateMark1('subm5','fbk15')" onchange="validateMark1('subm5','fbk15')" required>
+                                    <div class="text-danger" id="fbk15"> </div>                                 
                                 </div>
                                 <div class="form-group col-12 col-sm-3 col-md-3"> 
                                     <!-- <label for="tm5">Total mark</label> -->
-                                    <input type="number" class="form-control" id="tm5" placeholder="Total Mark" required>
+                                    <input type="number" class="form-control" id="tm5" placeholder="Total Mark" onkeyup="validateMark2('subm5','tm5','fbk25')" onclick="validateMark2('subm5','tm5','fbk25')" onchange="validateMark2('subm5','tm5','fbk25')" required>
+                                    <div class="text-danger" id="fbk25"> </div>                                 
                                 </div>
                             </div>
                             <div class="form-row">
@@ -119,11 +128,13 @@
                                 </div>
                                 <div class="form-group col-12 col-sm-3 col-md-3">
                                     <!-- <label for="subm6"> Mark </label> -->
-                                    <input type="number" class="form-control" id="subm6" placeholder="Mark Obtained" required>
+                                    <input type="number" class="form-control" id="subm6" placeholder="Mark Obtained" onkeyup="validateMark1('subm6','fbk16')" onclick="validateMark1('subm6','fbk16')" onchange="validateMark1('subm6','fbk16')" required>
+                                    <div class="text-danger" id="fbk16"> </div>                                 
                                 </div>
                                 <div class="form-group col-12 col-sm-3 col-md-3"> 
                                     <!-- <label for="tm6">Total mark</label> -->
-                                    <input type="number" class="form-control" id="tm6" placeholder="Total Mark" required>
+                                    <input type="number" class="form-control" id="tm6" placeholder="Total Mark" onkeyup="validateMark2('subm6','tm6','fbk26')" onclick="validateMark2('subm6','tm6','fbk26')" onchange="validateMark2('subm6','tm6','fbk26')" required>
+                                    <div class="text-danger" id="fbk26"> </div>                                 
                                 </div>
                             </div>
                             <div class="col text-center">
@@ -142,5 +153,6 @@
             </div>
         </div>
     </div>
+    <script src="./js/validation.js"></script>
 </body>
 </html>
